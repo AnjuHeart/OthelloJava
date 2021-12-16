@@ -47,7 +47,7 @@ public class MiniGameForm extends javax.swing.JFrame {
         initComponents();
         this.SecondPlayer = Player2;
         if(!Player2){
-            lblPlayer2.setText("Máquina(BLANCO)");
+            lblPlayer2.setText("Máquina");
         }
         initializeBoard();
         turn = 2;
@@ -114,7 +114,7 @@ public class MiniGameForm extends javax.swing.JFrame {
             for (int j = 0; j < board.length; j++) {
                 board[i][j] = 0;
                 JButton btn = new JButton();
-                btn.setBounds((j * 65) + 30, (i * 65) + 60, 65, 65);
+                btn.setBounds((j * 65) + 60, (i * 65) + 90, 65, 65);
                 btn.setBorder(new LineBorder(CellBorder));
                 btn.setVisible(true);
                 btn.setBackground(BoardGreen);
@@ -580,6 +580,15 @@ public class MiniGameForm extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         btnInstrucciones = new javax.swing.JButton();
+        lblRow1 = new javax.swing.JLabel();
+        lblColumns1 = new javax.swing.JLabel();
+        lblRow2 = new javax.swing.JLabel();
+        lblRow3 = new javax.swing.JLabel();
+        lblRow4 = new javax.swing.JLabel();
+        lblRow5 = new javax.swing.JLabel();
+        lblRow6 = new javax.swing.JLabel();
+        lblRow7 = new javax.swing.JLabel();
+        lblRow8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -590,7 +599,9 @@ public class MiniGameForm extends javax.swing.JFrame {
         panelScore.setBorder(javax.swing.BorderFactory.createTitledBorder("Puntuación"));
 
         lblPlayer1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        lblPlayer1.setText("Jugador 1 (NEGRO)");
+        lblPlayer1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPlayer1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectothello/minificha2.png"))); // NOI18N
+        lblPlayer1.setText("Jugador 1");
 
         lblScore1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblScore1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -602,25 +613,21 @@ public class MiniGameForm extends javax.swing.JFrame {
 
         lblPlayer2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblPlayer2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPlayer2.setText("Jugador 2 (BLANCO)");
+        lblPlayer2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyectothello/minificha1.png"))); // NOI18N
+        lblPlayer2.setText("Jugador 2");
 
         javax.swing.GroupLayout panelScoreLayout = new javax.swing.GroupLayout(panelScore);
         panelScore.setLayout(panelScoreLayout);
         panelScoreLayout.setHorizontalGroup(
             panelScoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelScoreLayout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addGroup(panelScoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelScoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(lblPlayer2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(panelScoreLayout.createSequentialGroup()
-                            .addGap(33, 33, 33)
-                            .addComponent(lblScore2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(lblPlayer1)
-                    .addGroup(panelScoreLayout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(lblScore1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(25, 25, 25))
+                .addContainerGap(32, Short.MAX_VALUE)
+                .addGroup(panelScoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(lblScore2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblScore1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblPlayer2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblPlayer1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         panelScoreLayout.setVerticalGroup(
             panelScoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -680,40 +687,120 @@ public class MiniGameForm extends javax.swing.JFrame {
             }
         });
 
+        lblRow1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblRow1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRow1.setText("1");
+
+        lblColumns1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblColumns1.setText("     A          B           C           D          E            F           G          H");
+
+        lblRow2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblRow2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRow2.setText("2");
+
+        lblRow3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblRow3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRow3.setText("3");
+
+        lblRow4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblRow4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRow4.setText("4");
+
+        lblRow5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblRow5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRow5.setText("5");
+
+        lblRow6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblRow6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRow6.setText("6");
+
+        lblRow7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblRow7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRow7.setText("7");
+
+        lblRow8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblRow8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblRow8.setText("8");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(626, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(panelTurno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelScore, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnInstrucciones, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(22, 22, 22))
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(lblTitulo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(lblTitulo))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblRow2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblRow1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblRow3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblRow4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblRow5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblRow6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblRow7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblRow8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 57, Short.MAX_VALUE)
+                        .addComponent(lblColumns1, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelTurno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInstrucciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTitulo)
-                .addGap(30, 30, 30)
-                .addComponent(panelTurno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(panelScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                .addComponent(btnReset)
-                .addGap(18, 18, 18)
-                .addComponent(btnInstrucciones)
-                .addGap(18, 18, 18)
-                .addComponent(btnSalir)
-                .addGap(33, 33, 33))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(lblTitulo)
+                                .addGap(39, 39, 39)
+                                .addComponent(panelTurno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
+                                .addComponent(lblColumns1)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(panelScore, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(lblRow1)
+                        .addGap(40, 40, 40)
+                        .addComponent(lblRow2)
+                        .addGap(40, 40, 40)
+                        .addComponent(lblRow3)
+                        .addGap(40, 40, 40)
+                        .addComponent(lblRow4)
+                        .addGap(40, 40, 40)
+                        .addComponent(lblRow5)))
+                .addGap(40, 40, 40)
+                .addComponent(lblRow6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(lblRow7)
+                        .addGap(40, 40, 40)
+                        .addComponent(lblRow8)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addComponent(btnReset)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnInstrucciones)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSalir)
+                        .addGap(20, 20, 20))))
         );
 
         pack();
@@ -787,9 +874,18 @@ public class MiniGameForm extends javax.swing.JFrame {
     private javax.swing.JButton btnInstrucciones;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JLabel lblColumns1;
     private javax.swing.JLabel lblPlayer1;
     private javax.swing.JLabel lblPlayer2;
     private javax.swing.JLabel lblPlayerTurn;
+    private javax.swing.JLabel lblRow1;
+    private javax.swing.JLabel lblRow2;
+    private javax.swing.JLabel lblRow3;
+    private javax.swing.JLabel lblRow4;
+    private javax.swing.JLabel lblRow5;
+    private javax.swing.JLabel lblRow6;
+    private javax.swing.JLabel lblRow7;
+    private javax.swing.JLabel lblRow8;
     private javax.swing.JLabel lblScore1;
     private javax.swing.JLabel lblScore2;
     private javax.swing.JLabel lblTitulo;
